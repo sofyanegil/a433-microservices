@@ -3,10 +3,10 @@ version: '3.7'
 services:
   # item-app container
   item-app:
-    # Enable restart policy
-    restart: always
     # Use image from GitHub Container Registry
     image: ghcr.io/sofyanegil/item-app:v1
+    # Enable restart policy
+    restart: always
     # Expose port mapping from container 8080 to host 80
     ports:
       - 80:8080
@@ -15,11 +15,11 @@ services:
       - item-db
   # item-db container
   item-db:
-    # Enable restart policy
-    restart: always
     # Use mongo image from Docker Hub
     image: mongo:3
-    # Mount volume to store data
+    # Enable restart policy
+    restart: always
+    # Mount volume for data persistence
     volumes:
       - app-db:/data/db
 # Volumes

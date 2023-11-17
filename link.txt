@@ -1,0 +1,2 @@
+Docker Hub : https://hub.docker.com/r/sofyanegi/item-app
+Github Packages Repository : https://github.com/users/sofyanegil/packages/container/package/item-app
