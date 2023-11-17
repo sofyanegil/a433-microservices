@@ -1,0 +1,27 @@
+# Docker Compose version 3.7
+version: '3.7'
+services:
+  # item-app container
+  item-app:
+    # Enable restart policy
+    restart: always
+    # Use image from GitHub Container Registry
+    image: ghcr.io/sofyanegil/item-app:v1
+    # Expose port mapping from container 8080 to host 80
+    ports:
+      - 80:8080
+    # Run item-app after item-db is ready
+    depends_on:
+      - item-db
+  # item-db container
+  item-db:
+    # Enable restart policy
+    restart: always
+    # Use mongo image from Docker Hub
+    image: mongo:3
+    # Mount volume to store data
+    volumes:
+      - app-db:/data/db
+# Volumes
+volumes:
+  app-db:
