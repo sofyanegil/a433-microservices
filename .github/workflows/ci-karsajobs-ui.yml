@@ -1,5 +1,7 @@
+# Name of workflow
 name: CI Pipeline Karsajobs UI
 
+# Run workflow on push and pull request events on karasjobs-ui branch
 on:
   push:
     branches:
@@ -8,7 +10,9 @@ on:
     branches:
       - 'karsajobs-ui'
 
+# Jobs to run
 jobs:
+  # Lint Dockerfile using hadolint
   lint-dockerfile:
     runs-on: ubuntu-latest
     steps:
@@ -19,6 +23,7 @@ jobs:
         with:
           dockerfile: Dockerfile
 
+  # Build and push Docker image to GitHub Container Registry
   build-app-karsajobs-ui:
     runs-on: ubuntu-latest
     needs: lint-dockerfile
