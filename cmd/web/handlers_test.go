@@ -35,7 +35,7 @@ func TestHomeHandler(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if !reflect.DeepEqual(string(body), "Up!") {
+	if !reflect.DeepEqual(string(body), "Upx!") {
 		t.Errorf("got %v, want %v", string(body), "Up!")
 	}
 
