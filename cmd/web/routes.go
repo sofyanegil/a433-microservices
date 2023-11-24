@@ -27,6 +27,7 @@ func (app *application) routes() http.Handler {
 	mux.Post("/job", app.InsertJob)
 	mux.Delete("/job/{id}", app.DeleteJob)
 	mux.Get("/health", app.health)
+	mux.Get("/hello-world", func(w http.ResponseWriter, r *http.Request) { w.Write([]byte("Hello, World!")) })
 
 	return mux
 }
